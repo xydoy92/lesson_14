@@ -11,7 +11,7 @@ for (let i = 0; i < persons.length; i++) {
 	if (persons[i]["age"] >= 18) {
 		persons[i]["adult"] = true;
 		// Узнаём профессию
-		persons[i]["job"] = prompt("Кем вы работаете?");
+		persons[i]["job"] = prompt(`Кем вы работаете, ${persons[i]["name"]}?`);
 	} else {
 		persons[i]["adult"] = false;
 		// Прописываем родителю ребёнка
