@@ -22,5 +22,5 @@ for (let i = 0; i < persons.length; i++) {
 		}
 	}
 }
-// Проверка, что всё сработало
+	// Проверка, что всё сработало
 console.log(persons);
