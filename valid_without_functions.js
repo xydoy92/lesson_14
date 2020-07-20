@@ -29,7 +29,7 @@ while (validation === false && cancel === false) {
 	} else if (login.length < 3 || login.length > 10) {
 		login = prompt("Логин должен содержать от 3 до 10 символов. Попробуйте ещё раз");
 	// Валидация на символы
-	} else if (login.match(/\w/gu) === null) {
+	} else if (login.match(/\W/gu)) {
 		login = prompt("Логин может состоять только из латиницы любого регистра, цифр и нижнего подчёркивания. Попробуйте ещё раз");
 	// Сверка с уже зарегистрированными
 	} else {
@@ -58,7 +58,7 @@ while (validation === false && cancel === false) {
 		password = prompt("Вы не ввели пароль. Попробуйте ещё раз");
 	} else if (password.length < 6 || password.length > 16) {
 		password = prompt("Пароль должен содержать от 6 до 16 символов. Попробуйте ещё раз");
-	} else if (password.match(/\w/gu) === null) {
+	} else if (password.match(/\W/gu)) {
 		password = prompt("Пароль может состоять только из латиницы любого регистра, цифр и нижнего подчёркивания. Попробуйте ещё раз");
 	} else {
 		// Проверка запоминания пароля
@@ -91,7 +91,7 @@ while (validation === false && cancel === false) {
 		login = prompt("Вы не ввели логин. Попробуйте ещё раз");
 	} else if (login.length < 3 || login.length > 10) {
 		login = prompt("Логин должен содержать от 3 до 10 символов. Попробуйте ещё раз");
-	} else if (login.match(/\w/gu) === null) {
+	} else if (login.match(/\W/gu)) {
 		login = prompt("Логин может состоять только из латиницы любого регистра, цифр и нижнего подчёркивания. Попробуйте ещё раз");
 	// Сверка с зарегистрированными при входе
 	} else {
@@ -118,7 +118,7 @@ while (validation === false && cancel === false) {
 		password = prompt("Вы не ввели пароль. Попробуйте ещё раз");
 	} else if (password.length < 6 || password.length > 16) {
 		password = prompt("Пароль должен содержать от 6 до 16 символов. Попробуйте ещё раз");
-	} else if (password.match(/\w/gu) === null) {
+	} else if (password.match(/\W/gu)) {
 		password = prompt("Пароль может состоять только из латиницы любого регистра, цифр и нижнего подчёркивания. Попробуйте ещё раз");
 		// Проверка пароля при входе
 	} else if (users[userArrayNumber]["password"] !== password) {

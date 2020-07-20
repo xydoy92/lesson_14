@@ -41,7 +41,7 @@ function validate(validProp, validType, dataType) {
 		} else if (validProp.length < minLength || validProp.length > maxLength) {
 			validProp = prompt(`${translate[0].toUpperCase() + translate.slice(1)} должен содержать от ${minLength} до ${maxLength} символов.${repeatAgain}`);
 		// Валидация допустимых символов
-		} else if (validProp.match(/\w/gu) === null) {
+		} else if (validProp.match(/\W/gu)) {
 			validProp = prompt(`${translate[0].toUpperCase() + translate.slice(1)} может состоять только из латиницы любого регистра, цифр и нижнего подчёркивания.${repeatAgain}`);
 		// Особая валидация
 		} else {
