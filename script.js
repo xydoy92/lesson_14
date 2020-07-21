@@ -16,7 +16,6 @@ for (let i = 0; i < persons.length; i++) {
 		persons[i]["job"] = prompt(`Кем вы работаете, ${persons[i]["name"]}?`);
 	} else {
 		notAdult.push(persons[i]);
-		// Прописываем родителю ребёнка
 	}
 }
 
