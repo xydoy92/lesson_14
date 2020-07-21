@@ -83,25 +83,18 @@ if (cancel === false) {
 	// Переменная для хранения соответствия логин-пароль
 let userArrayNumber;
 
+foundMatch:
 while (validation === false && cancel === false) {
-	foundMatch:
+	for (let i = 0; i < users.length; i++) {
+		if (login === users[i]["login"]) {
+			validation = true;
+			userArrayNumber = i;
+			break foundMatch;
+		}
+	}
 	if (login === null) {
 		cancel = true;
-	} else if (login === "") {
-		login = prompt("Вы не ввели логин. Попробуйте ещё раз");
-	} else if (login.length < 3 || login.length > 10) {
-		login = prompt("Логин должен содержать от 3 до 10 символов. Попробуйте ещё раз");
-	} else if (login.match(/\W/gu)) {
-		login = prompt("Логин может состоять только из латиницы любого регистра, цифр и нижнего подчёркивания. Попробуйте ещё раз");
-	// Сверка с зарегистрированными при входе
 	} else {
-		for (let i = 0; i < users.length; i++) {
-			if (login === users[i]["login"]) {
-				validation = true;
-				userArrayNumber = i;
-				break foundMatch;
-			}
-		}
 		login = prompt("Такого пользователя нет. Попробуйте ещё раз");
 	}
 }
@@ -112,20 +105,13 @@ if (cancel === false) {
 }
 
 while (validation === false && cancel === false) {
-	if (password === null) {
-		cancel = true;
-	} else if (password === "") {
-		password = prompt("Вы не ввели пароль. Попробуйте ещё раз");
-	} else if (password.length < 6 || password.length > 16) {
-		password = prompt("Пароль должен содержать от 6 до 16 символов. Попробуйте ещё раз");
-	} else if (password.match(/\W/gu)) {
-		password = prompt("Пароль может состоять только из латиницы любого регистра, цифр и нижнего подчёркивания. Попробуйте ещё раз");
-		// Проверка пароля при входе
-	} else if (users[userArrayNumber]["password"] !== password) {
-		password = prompt("Пароль неверный. Попробуйте ещё раз");
-	} else {
-		validation = true;
+	if (users[userArrayNumber]["password"] === password) {
 		alert("Ура! Вы вошли на сайт, где ничего нет)");
+		validation = true;
+	} else if (password === null) {
+		cancel = true;
+	} else {
+		password = prompt("Пароль неверный. Попробуйте ещё раз");
 	}
 }
 
