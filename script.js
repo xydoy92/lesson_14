@@ -17,10 +17,13 @@ for (let i = 0; i < persons.length; i++) {
 	} else {
 		notAdult.push(persons[i]);
 		// Прописываем родителю ребёнка
-		for (let j = 0; j < persons.length; j++) {
-			if (persons[i]["parentId"] === persons[j]["id"]) {
-				persons[j]["childId"] = persons[i]["id"];
-			}
+	}
+}
+
+for (let i = 0; i < adult.length; i++) {
+	for (let j = 0; j < notAdult.length; j++) {
+		if (notAdult[j]["parentId"] === adult[i]["id"]) {
+			adult[i]["childId"] = notAdult[j]["id"];
 		}
 	}
 }
